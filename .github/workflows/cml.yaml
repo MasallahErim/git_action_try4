@@ -1,4 +1,4 @@
-name: your-workflow-name
+name: git_action_try4
 on: [push]
 jobs:
   run:
