@@ -26,5 +26,14 @@ jobs:
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # echo ile "model metrics" yazısını report.md ekliyoruz
+          echo "## Model Metrics" > report.md
+          #metrics.txt dosaysındaki bilgileri report.md ekliyoruz
           cat metrics.txt >> report.md
+          
+          #başlık ekiyoruz 
+          echo "## Data visualizaiton" >> report.md
+          echo "![](./feature_importance.png)" >> report.md
+          echo "![](./residuals.png)" >> report.md
+          
           cml comment create report.md
